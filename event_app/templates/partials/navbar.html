@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between ps-3 pe-3">
+  <a class="navbar-brand pl-5" href="/"><img src="/static/img/logo.png" height="50px" alt="Evently Logo"></a>
+  <div class="d-flex flex-row align-items-center">
+    {% if currentUser and currentUser.is_authenticated %}
+      <a href="/logout" class="nav-link link-light">Log Out</a>
+      <a href="/events/new" class="btn btn-primary">New Event</a>
+    {% else %}
+      <a href="/login" class="nav-link link-light">Log In</a>
+      <a href="/sign-up" class="btn btn-primary">Get Started</a>
+    {% endif %}
+  </div>
+</nav>

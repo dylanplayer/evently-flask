@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+  <div class="d-flex flex-row align-items-center justify-content-center" style="max-width: 1300px; flex-wrap: wrap;">
+    {% for event in events %}
+      <div class="card rounded m-2" style="width: 350px; height: 350px;">
+        <img class="card-img-top" src="{{event.imgUrl}}" alt="Card image cap">
+        <div class="card-body">
+          <h2 class="card-title h4">{{event.title}}</h2>
+          <p class="text-muted"><time datetime="{{event.date}}">{{event.date}}</time></p>
+        </div>
+        <div class="card-footer">
+          <a href="/events/{{event.id}}" class="btn btn-primary w-100 align-self-center">VIEW</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

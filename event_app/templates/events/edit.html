@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+  <div class="card">
+    <div class="card-header">
+      <h1 class="card-title">Update Event</h1>
+    </div>
+    <div class="card-body">
+      <form method="POST" action="/events/{{event.id}}/update" class="mb-1">
+        {% include 'events/partials/form.html' %}
+      </form>
+      <form action="/events/{{event.id}}/delete" class="w-100" method="POST">
+        <button type="submit" class='btn btn-danger w-100'>Delete</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
